@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Weather Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader" class="loader hidden"></div>
+
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">🌍 Weather Report</h1>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" id="city" placeholder="Search city..." />
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <button id="locationBtn" class="location-btn">📍 Use Current Location</button>
+        <button id="themeBtn" class="theme-btn">🌓 Theme</button>
+
+        <!-- Weather Card -->
+        <div id="weather-card" class="weather-card hidden">
+            <h2 id="city-name"></h2>
+            <i id="weather-icon" class="wi"></i>
+            <h3 id="temperature"></h3>
+            <p id="description"></p>
+
+            <div class="details">
+                <div class="detail-card">
+                    <i class="wi wi-humidity"></i>
+                    <p>Humidity</p>
+                    <span id="humidity"></span>% 
+                </div>
+
+                <div class="detail-card">
+                    <i class="wi wi-strong-wind"></i>
+                    <p>Wind</p>
+                    <span id="wind"></span> km/h
+                </div>
+
+                <div class="detail-card">
+                    <i class="wi wi-barometer"></i>
+                    <p>Pressure</p>
+                    <span id="pressure"></span> hPa
+                </div>
+            </div>
+
+            <h3 class="subtitle">7-Day Forecast</h3>
+            <div id="forecast" class="forecast"></div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-section">
+            <h3 class="subtitle">Live Weather Map</h3>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
